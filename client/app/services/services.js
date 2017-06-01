@@ -2,6 +2,15 @@ var apiKey = require('../../../server/config/apiKey.js');
 
 angular.module('flixview.services', [])
   .factory('Details', function($http) {
+    var getReviews = function(type, id) {
+      return $http({
+        method: 'GET',
+        url: '/review/' + type + '/' + id
+      })
+      .then(function(res) {
+        return res;
+      });
+    };
     var getDetails = function (type, id, cb) {
       return $http({
         method: 'GET',
@@ -13,7 +22,8 @@ angular.module('flixview.services', [])
     };
 
     return {
-      getDetails: getDetails
+      getDetails: getDetails,
+      getReviews: getReviews
     };
   })
   .factory('Landing', function($http) {
