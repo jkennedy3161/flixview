@@ -15,6 +15,7 @@
 1. [Team](#team)
 1. [Contributing](#contributing)
 
+
 ## Usage
 
 > Some usage instructions
@@ -37,6 +38,7 @@ From within the root directory:
 sudo npm install -g bower
 npm install
 bower install
+```
 
 ### Roadmap
 
