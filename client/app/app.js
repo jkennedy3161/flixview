@@ -5,13 +5,18 @@ angular.module('flixview', [
   'flixview.services',
   'ngRoute'
 ])
+.controller('flixviewController', function($scope, $location) {
+  $scope.search = function(serach) {
+    $location.path('/results/' + search);
+  };
+})
 .config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/landing/landing.html',
       controller: 'LandingController'
     })
-    .when('/results', {
+    .when('/results/:search', {
       templateUrl: 'app/results/results.html',
       controllerAs: 'context',
       controller: 'ResultsController'

@@ -14,8 +14,7 @@
           <a class="navbar-brand">
             <img class="logo" alt="Brand" src="https://ak2.picdn.net/shutterstock/videos/766603/thumb/1.jpg">
           </a>
-          <form ng-controller="ResultsController" ng-submit="getResults(searchQuery)">
-            <p>{{ searchQuery }}</p>
+          <form ng-controller="flixviewController" ng-submit="search(searchQuery)">
             <input type="search" name="search" class="search" ng-model="searchQuery" >
           </form>
           <div class="nav-buttons">
