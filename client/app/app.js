@@ -1,7 +1,8 @@
 angular.module('flixview', [
+  'flixview.landing',
+  'flixview.results',
   'flixview.details',
   'flixview.services',
-  'flixview.landing',
   'ngRoute'
 ])
 .config(function($routeProvider) {
@@ -9,5 +10,10 @@ angular.module('flixview', [
     .when('/', {
       templateUrl: 'app/landing/landing.html',
       controller: 'LandingController'
+    })
+    .when('/results', {
+      templateUrl: 'app/results/results.html',
+      controllerAs: 'context',
+      controller: 'ResultsController'
     });
 });
