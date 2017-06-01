@@ -2,9 +2,10 @@ var mongoose = require('mongoose');
 
 var ReviewSchema = new mongoose.Schema({
   username: String,
+  movie: Number,
   title: String,
   date: String,
-  review: String,
+  content: String,
   rating: Number,
   voteCount: Number
 });

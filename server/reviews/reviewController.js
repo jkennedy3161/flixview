@@ -8,7 +8,7 @@ module.exports = {
       movie: data.movie,
       title: data.title,
       date: new Date(),
-      review: data.review,
+      content: data.content,
       rating: data.rating,
       voteCount: 0
     });
@@ -48,9 +48,32 @@ module.exports = {
 
   },
   editReview: function(req, res, next) {
+    var id = req.params.reviewID;
+    var content = req.body.content;
+    var rating = req.body.rating;
+    var title = req.body.title;
+    Review.findOneAndUpdate(
+    {
+      id: id
+    },
+    {
+      rating: rating,
+      title: title,
+      content: content
+    });
 
   },
   editCount: function(req, res, next) {
-
+    var id = req.params.id;
+    var voteCount = req.body.voteCount;
+    Review.findOneAndUpdate(
+    {
+      id: id
+    },
+    {
+      $inc: {
+        voteCount: voteCount
+      }
+    });
   }
 };
