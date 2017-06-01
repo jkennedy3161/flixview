@@ -1,23 +1,19 @@
 angular.module('flixview.results', [])
-  .controller('ResultsController', function(Results) {
-    var context = this;
-    context.searchQuery = "Jurassic Park";
-    context.results = [];
+  .controller('ResultsController', function($scope, Results) {
+    $scope.searchQuery = "Random";
+    $scope.results = [];
 
-    context.getResults = function(searchQuery) {
+    $scope.getResults = function(searchQuery) {
       Results.multiSearch(searchQuery)
         .then(function(results) {
-          console.log(results);
-          context.results = results.data.results;
+          $scope.results = results.data.results;
         });
     };
-    context.getDefaultResults = function() {
-      context.getResults(context.searchQuery);
-    }
   })
   .directive('searchResult', function() {
     return {
       restrict: 'EA',
+      replace: true,
       scope: {
         source: '='
       },
