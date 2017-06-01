@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="flixview">
 <head>
   <meta charset="utf-8">
   <title>Flixview - Constructive Movie Reviews</title>
@@ -14,7 +14,7 @@
           <a class="navbar-brand">
             <img class="logo" alt="Brand" src="https://ak2.picdn.net/shutterstock/videos/766603/thumb/1.jpg">
           </a>
-          <input type="text" name="search">
+          <input type="text" name="search" ng-controller="ResultsController" class="search">
           <div class="nav-buttons">
             <a href="/">Home</a>
             <a href="/browse">Browse</a>
@@ -30,5 +30,10 @@
 
   <script src="app/scripts/angular.js"></script>
   <script src="app/scripts/angular-route.js"></script>
+  <script src="app/landing/landing.js"></script>
+  <script src="app/results/results.js"></script>
+  <script src="app/details/details.js"></script>
+  <script src="app/services/services.js"></script>
+  <script src="app/app.js"></script>
 </body>
 </html>
