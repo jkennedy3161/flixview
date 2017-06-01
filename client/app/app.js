@@ -15,5 +15,10 @@ angular.module('flixview', [
       templateUrl: 'app/results/results.html',
       controllerAs: 'context',
       controller: 'ResultsController'
+    })
+    .when('/:type/:id', {
+      templateUrl: 'app/details/details.html',
+      controllerAs: 'context',
+      controller: 'DetailsController'
     });
 });
