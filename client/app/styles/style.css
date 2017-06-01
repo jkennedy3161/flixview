@@ -1,4 +1,8 @@
 .logo {
   height: 110px;
   width: 110px;
-};
+}
+
+.nav-buttons {
+  float: right;
+}
