@@ -1,7 +1,7 @@
-<div id="container" ng-init="context.getDefaultResults()">
-  <search-result source="result" ng-repeat="result in context.results">
-    <ul>
+<div id="container" ng-init="getResults(searchQuery)">
+  <ul ng-model="results">
+    <search-result source="result" ng-repeat="result in results">
       {{ result.title }}
-    </ul>
-  </search-result>
+    </search-result>
+  </ul>
 </div>
