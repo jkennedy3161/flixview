@@ -22,7 +22,7 @@ module.exports = {
 
   },
   getReviews: function(req, res, next) {
-    var id = req.params.id;
+    var id = req.params.movieId;
     Review.find({movie: id})
       .sort({date: -1})
       .exec(function(err, review) {
@@ -51,6 +51,9 @@ module.exports = {
     var rating = req.body.rating;
     var title = req.body.title;
     Review.findOneAndUpdate({ _id: id }, {content: content, rating: rating, title: title}, {new: true}, function (err, review) {
+      if (err) {
+        res.send(err);
+      }
       res.json(review);
     });
 
