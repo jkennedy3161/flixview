@@ -1,4 +1,4 @@
-var Review = require('./reviewModel.js');
+var Review = require('../reviews/reviewModel.js');
 
 module.exports = {
   postReview: function(req, res, next) {
@@ -27,6 +27,7 @@ module.exports = {
   getReviews: function(req, res, next) {
     var id = req.params.typeId;
     var type = req.params.type;
+    var key =
     Review.find({typeId: id})
       .sort({date: -1})
       .exec(function(err, review) {

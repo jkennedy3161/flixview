@@ -1,5 +1,3 @@
-var apiKey = require('../../../server/config/apiKey.js');
-
 angular.module('flixview.services', [])
   .factory('Details', function($http) {
     var getReviews = function(type, id) {
@@ -14,7 +12,7 @@ angular.module('flixview.services', [])
     var getDetails = function (type, id, cb) {
       return $http({
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/' + type + '/' + id + '?api_key=' + apiKey.key + '&language=en-US'
+        url: 'https://api.themoviedb.org/3/' + type + '/' + id + '?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
       })
       .then(function(res) {
         return res.data;
@@ -33,7 +31,7 @@ angular.module('flixview.services', [])
     var multiSearch = function(query) {
       return $http({
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/search/multi?api_key=' + apiKey.key + '&language=en-US&query=' + query
+        url: 'https://api.themoviedb.org/3/search/multi?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US&query=' + query
       })
       .then(function(res) {
         return res;

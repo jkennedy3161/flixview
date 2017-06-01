@@ -9,5 +9,4 @@ angular.module('flixview.results', [])
         $scope.loaded = true;
         $scope.results = results.data.results;
       });
-    };
   });

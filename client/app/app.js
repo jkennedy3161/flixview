@@ -6,11 +6,11 @@ angular.module('flixview', [
   'ngRoute'
 ])
 .controller('flixviewController', function($scope, $location) {
-  $scope.search = function(serach) {
+  $scope.search = function(search) {
     $location.path('/results/' + search);
   };
 })
-.config(function($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/landing/landing.html',
