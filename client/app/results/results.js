@@ -23,7 +23,7 @@ angular.module('flixview.results', [])
       scope: {
         source: '='
       },
-      templateUrl: 'app/results/results.html'
+      templateUrl: 'app/results/searchResult.html'
     }
   })
   .factory('Results', function($http) {
