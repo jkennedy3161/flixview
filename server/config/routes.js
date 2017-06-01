@@ -1,5 +1,5 @@
-var reviewController = require('../reviews/reviewController');
-var userController = require('../users/userController');
+var reviewController = require('../reviews/reviewController.js');
+var userController = require('../users/userController.js');
 
 module.exports = function(app, express) {
 
