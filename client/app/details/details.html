@@ -20,6 +20,17 @@
     <p> {{overview}} </p>
  </div>
 
+ <div class="showTimes">
+   <form ng-submit="getShowTimes()">
+     <input type="text" ng-model="zip">
+   </form>
+   <ul>
+     <li ng-repeat="showTime in showTimes">
+       <p class="showTime-title">{{ showTime.title }}</p>
+     </li>
+   </ul>
+ </div>
+
  <div class="postReview">
    <h5>Reviews</h5>
    <form ng-submit="post()">
