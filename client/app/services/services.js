@@ -96,10 +96,10 @@ angular.module('flixview.services', [])
     };
   })
   .factory('Results', function($http) {
-    var multiSearch = function(query) {
+    var multiSearch = function(query, page) {
       return $http({
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/search/multi?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US&query=' + query
+        url: 'https://api.themoviedb.org/3/search/multi?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US&query=' + query + '&page=' + page
       })
       .then(function(res) {
         return res;
