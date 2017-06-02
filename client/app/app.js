@@ -3,6 +3,7 @@ angular.module('flixview', [
   'flixview.results',
   'flixview.details',
   'flixview.services',
+  'flixview.user',
   'ngRoute'
 ])
 .controller('flixviewController', function($scope, $location) {
@@ -23,13 +24,15 @@ angular.module('flixview', [
     })
     .when('/results/:search/:page', {
       templateUrl: 'app/results/results.html',
-      controllerAs: 'context',
       controller: 'ResultsController'
     })
     .when('/:type/:id', {
       templateUrl: 'app/details/details.html',
-      controllerAs: 'context',
       controller: 'DetailsController'
+    })
+    .when('/user', {
+      templateUrl: 'app/user/user.html',
+      controller: 'UserController'
     });
     // removes # from url
     $locationProvider.html5Mode(true);
