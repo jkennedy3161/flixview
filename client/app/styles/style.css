@@ -1,3 +1,7 @@
+* {
+  color: black;
+}
+
 .logo {
   height: 40px;
   width: 40px;
@@ -34,8 +38,4 @@ li {
   margin: 0 auto;
   height: 100%;
   width: 100%;
-}
-
-div.movieDetails {
-  color: black;
 }
