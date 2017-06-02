@@ -25,7 +25,7 @@ angular.module('flixview.services', [])
     };
   })
   .factory('Landing', function($http) {
-    var getPopular = function() {
+    var getPopularMovies = function() {
       return $http({
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/popular?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
@@ -35,7 +35,7 @@ angular.module('flixview.services', [])
       });
     };
 
-    var getLatest = function() {
+    var getLatestMovies = function() {
       return $http({
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
@@ -45,7 +45,7 @@ angular.module('flixview.services', [])
       });
     };
 
-    var getUpcoming = function() {
+    var getUpcomingMovies = function() {
       return $http({
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
@@ -55,9 +55,9 @@ angular.module('flixview.services', [])
       });
     };
     return {
-      getPopular: getPopular,
-      getLatest: getLatest,
-      getUpcoming: getUpcoming
+      getPopularMovies: getPopularMovies,
+      getLatestMovies: getLatestMovies,
+      getUpcomingMovies: getUpcomingMovies
     };
   })
   .factory('Results', function($http) {

@@ -1,11 +1,11 @@
 <div ng-controller="LandingController" id="container">
   <div class="movie-container">
     <h2>Popular</h2>
-      <ul ng-init="fetchPopular()" class="movie-list">
-        <a ng-repeat="popular in populars | limitTo:10" href="/movie/{{ popular.id }}">
+      <ul ng-init="fetchPopularMovies()" class="movie-list">
+        <a ng-repeat="popularMovie in popularMovies | limitTo:10" href="/movie/{{ popularMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{popular.poster_path}}" alt="">
+              <img src="http://image.tmdb.org/t/p/w185/{{popularMovie.poster_path}}" alt="">
             </div>
           </li>
         </a>
@@ -13,11 +13,11 @@
   </div>
   <div class="movie-container">
     <h2>Latest</h2>
-      <ul ng-init="fetchLatest()" class="movie-list">
-        <a ng-repeat="latest in latests | limitTo:10" href="/movie/{{ latest.id }}">
+      <ul ng-init="fetchLatestMovies()" class="movie-list">
+        <a ng-repeat="latestMovie in latestMovies | limitTo:10" href="/movie/{{ latestMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{latest.poster_path}}" alt="">
+              <img src="http://image.tmdb.org/t/p/w185/{{latestMovie.poster_path}}" alt="">
             </div>
           </li>
         </a>
@@ -25,11 +25,11 @@
   </div>
   <div class="movie-container">
     <h2>Upcoming</h2>
-      <ul ng-init="fetchUpcoming()" class="movie-list">
-        <a ng-repeat="upcoming in upcomings | limitTo:10" href="/movie/{{ upcoming.id }}">
+      <ul ng-init="fetchUpcomingMovies()" class="movie-list">
+        <a ng-repeat="upcomingMovie in upcomingMovies | limitTo:10" href="/movie/{{ upcomingMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{upcoming.poster_path}}" alt="">
+              <img src="http://image.tmdb.org/t/p/w185/{{upcomingMovie.poster_path}}" alt="">
             </div>
           </li>
         </a>
