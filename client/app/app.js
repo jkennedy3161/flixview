@@ -6,8 +6,13 @@ angular.module('flixview', [
   'ngRoute'
 ])
 .controller('flixviewController', function($scope, $location) {
+  $scope.searchQuery = '';
   $scope.search = function(search) {
+    if (search.length < 1) {
+      return;
+    }
     $location.path('/results/' + search);
+    $scope.searchQuery = '';
   };
 })
 .config(function($routeProvider, $locationProvider) {
