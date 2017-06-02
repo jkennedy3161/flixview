@@ -20,4 +20,10 @@ angular.module('flixview.details', [])
           $scope.hasReview = true;
         }
       });
+
+      $scope.post = function() {
+        var content = {
+
+        };
+      };
   });
