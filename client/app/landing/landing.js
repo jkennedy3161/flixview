@@ -3,6 +3,8 @@ angular.module('flixview.landing', [])
     $scope.popularMovies = [];
     $scope.latestMovies = [];
     $scope.upcomingMovies = {};
+    $scope.popularShows = [];
+    $scope.latestShows = [];
 
     $scope.fetchPopularMovies = function() {
       Landing.getPopularMovies()
@@ -22,6 +24,20 @@ angular.module('flixview.landing', [])
       Landing.getUpcomingMovies()
         .then(function(data) {
           $scope.upcomingMovies = data.results;
+        });
+    };
+
+    $scope.fetchPopularShows = function() {
+      Landing.getPopularShows()
+        .then(function(data) {
+          $scope.popularShows = data.results;
+        });
+    };
+
+    $scope.fetchLatestShows = function() {
+      Landing.getLatestShows()
+        .then(function(data) {
+          $scope.latestShows = data.results;
         });
     };
   });
