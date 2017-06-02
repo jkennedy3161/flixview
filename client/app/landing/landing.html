@@ -2,10 +2,12 @@
   <div class="media-container">
     <h2>Popular Movies</h2>
       <ul ng-init="fetchPopularMovies()" class="media-list">
-        <a ng-repeat="popularMovie in popularMovies | limitTo:10" href="/movie/{{ popularMovie.id }}">
+        <a ng-repeat="popularMovie in popularMovies | limitTo:5" href="/movie/{{ popularMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{popularMovie.poster_path}}" alt="">
+              <!-- If no poster_path, show dummy image -->
+              <img ng-hide="!popularMovie.poster_path" src="http://image.tmdb.org/t/p/w185/{{popularMovie.poster_path}}" alt="">
+              <img ng-show="!popularMovie.poster_path" src="http://dummyimage.com/185x275/000/fff&text={{popularMovie.name}}" alt="">
             </div>
           </li>
         </a>
@@ -14,10 +16,12 @@
   <div class="media-container">
     <h2>Latest Movies</h2>
       <ul ng-init="fetchLatestMovies()" class="media-list">
-        <a ng-repeat="latestMovie in latestMovies | limitTo:10" href="/movie/{{ latestMovie.id }}">
+        <a ng-repeat="latestMovie in latestMovies | limitTo:5" href="/movie/{{ latestMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{latestMovie.poster_path}}" alt="">
+              <!-- If no poster_path, show dummy image -->
+              <img ng-hide="!latestMovie.poster_path" src="http://image.tmdb.org/t/p/w185/{{latestMovie.poster_path}}" alt="">
+              <img ng-show="!latestMovie.poster_path" src="http://dummyimage.com/185x275/000/fff&text={{latestMovie.name}}" alt="">
             </div>
           </li>
         </a>
@@ -26,10 +30,12 @@
   <div class="media-container">
     <h2>Upcoming Movies</h2>
       <ul ng-init="fetchUpcomingMovies()" class="media-list">
-        <a ng-repeat="upcomingMovie in upcomingMovies | limitTo:10" href="/movie/{{ upcomingMovie.id }}">
+        <a ng-repeat="upcomingMovie in upcomingMovies | limitTo:5" href="/movie/{{ upcomingMovie.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{upcomingMovie.poster_path}}" alt="">
+              <!-- If no poster_path, show dummy image -->
+              <img ng-hide="!upcomingMovie.poster_path" src="http://image.tmdb.org/t/p/w185/{{upcomingMovie.poster_path}}" alt="">
+              <img ng-show="!upcomingMovie.poster_path" src="http://dummyimage.com/185x275/000/fff&text={{upcomingMovie.name}}" alt="">
             </div>
           </li>
         </a>
@@ -38,10 +44,12 @@
   <div class="media-container">
     <h2>Popular TV Shows</h2>
       <ul ng-init="fetchPopularShows()" class="media-list">
-        <a ng-repeat="popularShow in popularShows | limitTo:10" href="/movie/{{ popularShow.id }}">
+        <a ng-repeat="popularShow in popularShows | limitTo:5" href="/tv/{{ popularShow.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{popularShow.poster_path}}" alt="">
+              <!-- If no poster_path, show dummy image -->
+              <img ng-hide="!popularShow.poster_path" src="http://image.tmdb.org/t/p/w185/{{popularShow.poster_path}}" alt="">
+              <img ng-show="!popularShow.poster_path" src="http://dummyimage.com/185x275/000/fff&text={{popularShow.name}}" alt="">
             </div>
           </li>
         </a>
@@ -50,10 +58,12 @@
   <div class="media-container">
     <h2>TV Shows Airing Today</h2>
       <ul ng-init="fetchLatestShows()" class="media-list">
-        <a ng-repeat="latestShow in latestShows | limitTo:10" href="/movie/{{ latestShow.id }}">
+        <a ng-repeat="latestShow in latestShows | limitTo:5" href="/tv/{{ latestShow.id }}">
           <li>
             <div class="poster-container">
-              <img src="http://image.tmdb.org/t/p/w185/{{latestShow.poster_path}}" alt="">
+              <!-- If no poster_path, show dummy image -->
+              <img ng-hide="!latestShow.poster_path" src="http://image.tmdb.org/t/p/w185/{{latestShow.poster_path}}" alt="">
+              <img ng-show="!latestShow.poster_path" src="http://dummyimage.com/185x275/000/fff&text={{latestShow.name}}" alt="">
             </div>
           </li>
         </a>
