@@ -31,17 +31,17 @@ angular.module('flixview.services', [])
         url: 'https://api.themoviedb.org/3/movie/popular?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
       })
       .then(function(res) {
-        return res;
+        return res.data;
       });
     };
 
     var getLatest = function() {
       return $http({
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/movie/latest?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+        url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
       })
       .then(function(res) {
-        return res;
+        return res.data;
       });
     };
 
@@ -51,7 +51,7 @@ angular.module('flixview.services', [])
         url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
       })
       .then(function(res) {
-        return res;
+        return res.data;
       });
     };
     return {
