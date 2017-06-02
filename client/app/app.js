@@ -31,6 +31,6 @@ angular.module('flixview', [
       controllerAs: 'context',
       controller: 'DetailsController'
     });
-
+    // removes # from url
     $locationProvider.html5Mode(true);
 });

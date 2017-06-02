@@ -25,7 +25,40 @@ angular.module('flixview.services', [])
     };
   })
   .factory('Landing', function($http) {
+    var getPopular = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/popular?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+      })
+      .then(function(res) {
+        return res;
+      });
+    };
 
+    var getLatest = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/latest?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+      })
+      .then(function(res) {
+        return res;
+      });
+    };
+
+    var getUpcoming = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+      })
+      .then(function(res) {
+        return res;
+      });
+    };
+    return {
+      getPopular: getPopular,
+      getLatest: getLatest,
+      getUpcoming: getUpcoming
+    };
   })
   .factory('Results', function($http) {
     var multiSearch = function(query) {
