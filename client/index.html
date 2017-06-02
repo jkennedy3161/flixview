@@ -3,36 +3,59 @@
 <head>
   <meta charset="utf-8">
   <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flixview - Constructive Movie Reviews</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" />
   <link rel="stylesheet" href="app/styles/style.css">
 </head>
+
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand">
-            <img class="logo" alt="Brand" src="https://ak2.picdn.net/shutterstock/videos/766603/thumb/1.jpg">
-          </a>
-          <form ng-controller="flixviewController" ng-submit="search(searchQuery)">
-            <input type="search" name="search" class="search" ng-model="searchQuery" >
-          </form>
-          <div class="nav-buttons">
-            <a href="/">Home</a>
-            <a href="/browse">Browse</a>
-            <a href="/account">My Account</a>
-            <a href="/logout">Logout</a>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="flixviewController">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Flixview</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation, we hide it in small screens -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="">Log In</a>
+          <a class="mdl-navigation__link" href="">Browse</a>
+        </nav>
+        <!-- Search input -->
+        <div class="mdl-tectfield mdl-js-textfield mdl-textfield--expandable">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <form ng-submit="search(searchQuery)">
+              <input class="mdl-textfield__input" type="text" ng-model="searchQuery" id="search-expandable">
+              <label class="mdl-textfield__label" for="search-expandable">Search text</label>
+            </form>
           </div>
         </div>
       </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+      <!-- small screen navigation menu -->
+      <span class="mdl-layout-title">Flixview</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Log In</a>
+        <a class="mdl-navigation__link" href="">Browse</a>
+      </nav>
     </div>
-  </nav>
-
-  <ng-view></ng-view>
-
+    <main class="mdl-layout__content">
+      <ng-view></ng-view>
+    </main>
+  </div>
+  <!-- Angular script -->
   <script src="app/scripts/angular.js"></script>
   <script src="app/scripts/angular-route.js"></script>
+  <!-- Material Style Script -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!-- Module Scripts -->
   <script src="app/landing/landing.js"></script>
   <script src="app/results/results.js"></script>
   <script src="app/details/details.js"></script>
