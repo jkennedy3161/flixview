@@ -8,7 +8,7 @@ angular.module('flixview', [
   'auth0.lock',
   'ngRoute'
 ])
-.controller('flixviewController', function($scope, $location, authService) {
+.controller('flixviewController', function($scope, $location, authService, $http) {
   $scope.searchQuery = '';
   $scope.loggedIn = false;
   $scope.search = function(search) {
@@ -25,11 +25,16 @@ angular.module('flixview', [
     $scope.loggedIn = false;
   };
 
+  $scope.checkUser = function(data) {
+    $http({});
+  };
+
   // Gets user profile when logged in
   authService.getProfileDeferred()
     .then(function(profile) {
       $scope.profile = profile;
       if (profile) {
+        $scope.checkUser(profile);
         $scope.loggedIn = true;
       }
     });
