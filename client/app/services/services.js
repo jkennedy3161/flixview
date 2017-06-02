@@ -108,4 +108,9 @@ angular.module('flixview.services', [])
     return {
       multiSearch: multiSearch
     };
+  })
+  .factory('User', function($http) {
+    return {
+
+    };
   });
