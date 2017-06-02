@@ -26,4 +26,6 @@ angular.module('flixview', [
       controllerAs: 'context',
       controller: 'DetailsController'
     });
+
+    $locationProvider.html5Mode(true);
 });
