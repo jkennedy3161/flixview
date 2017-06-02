@@ -19,10 +19,11 @@ angular.module('flixview.services', [])
       });
     };
 
-    var postReview = function(type, id, info) {
+    var postReview = function(type, id, content) {
       return $http({
         method: 'POST',
-        url: '/review/' + type + '/' + id
+        url: '/review/' + type + '/' + id,
+        data: content
       })
       .then(function(res) {
         return res;

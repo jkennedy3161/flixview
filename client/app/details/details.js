@@ -23,7 +23,12 @@ angular.module('flixview.details', [])
 
       $scope.post = function() {
         var content = {
-
+          username: 'Jarrett',
+          title: $scope.reviewTitle,
+          content: $scope.reviewBody,
+          rating: $scope.reviewRating
         };
+
+        Details.postReview($scope.type, $scope.id, content);
       };
   });

@@ -19,7 +19,7 @@ module.exports = {
       if (err) {
         res.send(err);
       } else {
-        res.sendStatus(201).send('Review saved!');
+        res.send('Review saved!');
       }
     })
 
@@ -45,7 +45,7 @@ module.exports = {
         if (err) {
           res.send(err);
         } else {
-          res.sendStatus(200).send('Review successfully removed!');
+          res.send('Review successfully removed!');
         }
       });
 

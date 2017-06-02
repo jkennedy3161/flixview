@@ -9,6 +9,7 @@ var port = process.env.PORT || 8000;
 app.use(express.static('client'));
 app.use(bodyParser.json());
 
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/flixview');
 
 require('./config/routes')(app, express);
