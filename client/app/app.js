@@ -11,7 +11,7 @@ angular.module('flixview', [
     if (search.length < 1) {
       return;
     }
-    $location.path('/results/' + search);
+    $location.path('/results/' + search + '/1');
     $scope.searchQuery = '';
   };
 })
@@ -21,7 +21,7 @@ angular.module('flixview', [
       templateUrl: 'app/landing/landing.html',
       controller: 'LandingController'
     })
-    .when('/results/:search', {
+    .when('/results/:search/:page', {
       templateUrl: 'app/results/results.html',
       controllerAs: 'context',
       controller: 'ResultsController'

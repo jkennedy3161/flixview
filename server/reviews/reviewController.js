@@ -1,6 +1,7 @@
 var Review = require('../reviews/reviewModel.js');
 
 module.exports = {
+  // handles saving user created reviews
   postReview: function(req, res, next) {
     var data = req.body;
     var type = req.params.type;
@@ -24,6 +25,7 @@ module.exports = {
     })
 
   },
+  // handles retreiving reviews from the db
   getReviews: function(req, res, next) {
     var id = req.params.typeId;
     var type = req.params.type;
@@ -38,6 +40,7 @@ module.exports = {
       });
 
   },
+  // handles deleting a review based off the review id
   deleteReview: function(req, res, next) {
     var id = req.params.reviewId;
     Review.findByIdAndRemove(id, function (err, data) {
@@ -49,6 +52,7 @@ module.exports = {
       });
 
   },
+  // handles editing a review that the user created
   editReview: function(req, res, next) {
     var id = req.params.reviewId;
     var content = req.body.content;
@@ -62,6 +66,7 @@ module.exports = {
     });
 
   },
+  // handles incrementing a review's count that users can interact with
   voteCount: function(req, res, next) {
     var id = req.params.reviewId;
     var voteCount = req.body.voteCount;

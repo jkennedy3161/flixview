@@ -1,6 +1,7 @@
 <div ng-controller="ResultsController" id="container">
   <p ng-if="results.length === 0 && loaded">No results were found!</p>
   <ul>
+    <h4>{{ totalResults }} results found</h4>
     <a ng-repeat="result in results" href="/{{ result.media_type }}/{{ result.id }}">
       <li>
         <h2 class="title" ng-if="result.name === undefined">{{ result.title }}</h2>
@@ -10,6 +11,12 @@
         <img ng-show="!result.poster_path" src="http://dummyimage.com/185x275/ccc/fff&text={{result.name}}" alt="">
         <p>{{ result.overview }}</p>
       </li>
+    </a>
+  </ul>
+  <ul class="media-list pages">
+    <h6>Pages</h6>
+    <a ng-repeat="page in totalPages" href="/#/results/{{ search }}/{{ page }}">
+      <li class="page">{{ page }}</li>
     </a>
   </ul>
 </div>
