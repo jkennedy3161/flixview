@@ -15,4 +15,4 @@ require('./config/routes')(app, express);
 
 app.listen(port);
 
-console.log('server running on http://localhost: ' + port);
+console.log('server running on http://localhost:' + port);

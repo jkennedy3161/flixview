@@ -13,7 +13,7 @@ angular.module('flixview.details', [])
         $scope.poster_path = $scope.data.poster_path;
         $scope.overview = $scope.data.overview;
       });
-    Details.getReview($scope.type, $scope.id)
+    Details.getReviews($scope.type, $scope.id)
       .then(function(reviews) {
         $scope.reviews = reviews.data;
         if ($scope.reviews.length > 0) {
