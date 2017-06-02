@@ -13,13 +13,16 @@ angular.module('flixview.details', [])
         $scope.poster_path = $scope.data.poster_path;
         $scope.overview = $scope.data.overview;
       });
-    Details.getReviews($scope.type, $scope.id)
-      .then(function(reviews) {
-        $scope.reviews = reviews.data;
-        if ($scope.reviews.length > 0) {
-          $scope.hasReview = true;
-        }
-      });
+      var getReviews = function() {
+      Details.getReviews($scope.type, $scope.id)
+        .then(function(reviews) {
+          $scope.reviews = reviews.data;
+          if ($scope.reviews.length > 0) {
+            $scope.hasReview = true;
+          }
+        });
+      };
+      getReviews();
 
       $scope.post = function() {
         var content = {
@@ -29,6 +32,14 @@ angular.module('flixview.details', [])
           rating: $scope.reviewRating
         };
 
-        Details.postReview($scope.type, $scope.id, content);
+        Details.postReview($scope.type, $scope.id, content)
+        .then(function(review) {
+          $scope.reviews.unshift(review.data);
+          $scope.hasReview = true;
+
+          $scope.reviewTitle = '';
+          $scope.reviewBody = '';
+          $scope.reviewRating = '';
+        });
       };
   });

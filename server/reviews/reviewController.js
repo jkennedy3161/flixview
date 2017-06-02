@@ -19,7 +19,7 @@ module.exports = {
       if (err) {
         res.send(err);
       } else {
-        res.send('Review saved!');
+        res.json(review);
       }
     })
 
@@ -27,14 +27,13 @@ module.exports = {
   getReviews: function(req, res, next) {
     var id = req.params.typeId;
     var type = req.params.type;
-    var key =
     Review.find({typeId: id})
       .sort({date: -1})
       .exec(function(err, review) {
         if (err) {
           res.send(err);
         } else {
-          res.send(review);
+          res.json(review);
         }
       });
 
