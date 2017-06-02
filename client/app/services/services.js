@@ -110,8 +110,15 @@ angular.module('flixview.services', [])
     };
   })
   .factory('User', function($http) {
+    var checkUser = function(data) {
+      $http({
+        method: 'POST',
+        url: '/user',
+        data: data
+      });
+    };
     return {
-
+      checkUser: checkUser
     };
   })
 
