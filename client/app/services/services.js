@@ -54,10 +54,33 @@ angular.module('flixview.services', [])
         return res.data;
       });
     };
+
+    var getPopularShows = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/tv/popular?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+      })
+      .then(function(res) {
+        return res.data;
+      });
+    };
+
+    var getLatestShows = function() {
+      return $http({
+        method: 'GET',
+        url: 'https://api.themoviedb.org/3/tv/airing_today?api_key=d4fa18b170e5c465d770c71fe7fef9a6&language=en-US'
+      })
+      .then(function(res) {
+        return res.data;
+      });
+    };
+
     return {
       getPopularMovies: getPopularMovies,
       getLatestMovies: getLatestMovies,
-      getUpcomingMovies: getUpcomingMovies
+      getUpcomingMovies: getUpcomingMovies,
+      getPopularShows: getPopularShows,
+      getLatestShows: getLatestShows
     };
   })
   .factory('Results', function($http) {
