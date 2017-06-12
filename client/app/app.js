@@ -71,7 +71,7 @@ angular.module('flixview', [
         return localStorage.getItem('id_token');
       }],
       whiteListDomains: ['localhost'],
-      unauuthenticatedRedirectPath: '/login'
+      unauthenticatedRedirectPath: '/login'
     });
 })
 
