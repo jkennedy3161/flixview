@@ -26,7 +26,7 @@ angular.module('flixview.details', [])
 
       $scope.post = function() {
         var content = {
-          username: 'Jarrett',
+          username: $scope.username,
           title: $scope.reviewTitle,
           content: $scope.reviewBody,
           rating: $scope.reviewRating
@@ -37,6 +37,7 @@ angular.module('flixview.details', [])
           $scope.reviews.unshift(review.data);
           $scope.hasReview = true;
 
+          $scope.username = '';
           $scope.reviewTitle = '';
           $scope.reviewBody = '';
           $scope.reviewRating = '';
