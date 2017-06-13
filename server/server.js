@@ -6,7 +6,7 @@ var path = require('path');
 
 var port = process.env.PORT || 8000;
 
-var db = process.env.MONGODB_URI || 'mongodb://localhost:' + port + '/flixview';
+var db = process.env.MONGODB_URI || 'mongodb://localhost:/flixview';
 
 app.use(express.static('client'));
 app.use(bodyParser.json());
