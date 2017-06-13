@@ -6,11 +6,13 @@ var path = require('path');
 
 var port = process.env.PORT || 8000;
 
+var db = process.env.MONGOLAB_URI || 'mongodb://localhost/flixview';
+
 app.use(express.static('client'));
 app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/flixview');
+mongoose.connect(db);
 
 require('./config/routes')(app, express);
 
