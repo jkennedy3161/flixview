@@ -2,9 +2,9 @@
   "name": "flixview",
   "version": "1.0.0",
   "description": "movie review site built with MEAN stack",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
